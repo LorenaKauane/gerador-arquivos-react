@@ -1,0 +1,57 @@
+{
+	"name": "gerador-arquivos-react",
+	"displayName": "gerador-arquivos-react",
+	"description": "Gerador de arquivos react, ele gera arquivos como, index, styled e tests",
+	"version": "0.0.1",
+	"publisher": "LorenaKauane",
+	"repository": "https://github.com/LorenaKauane/gerador-arquivos-react.git",
+	"engines": {
+		"vscode": "^1.50.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.gerador-arquivos-react"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.gerador-arquivos-react",
+				"title": "Gerador de arquivos React"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"when": "true",
+					"command": "extension.gerador-arquivos-react",
+					"group": "navigation"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "extension.gerador-arquivos-react",
+					"when": "editorHasSelection"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.50.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.0",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.9.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.0.2",
+		"vscode-test": "^1.4.0"
+	}
+}
